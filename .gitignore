@@ -1,7 +1,10 @@
 *.o
 
+home/.attic/keys
+
 home/.ssh/*
 !home/.ssh/config
 
 home/.xmonad/*
 !home/.xmonad/xmonad.hs
+
