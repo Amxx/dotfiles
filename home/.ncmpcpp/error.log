@@ -1,0 +1,48 @@
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- First byte did not match MPEG synch.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: A frame of unsupported or unknown type 'CM1' has been discarded
+TagLib: A frame of unsupported or unknown type 'CM1' has been discarded
+TagLib: A frame of unsupported or unknown type 'CM1' has been discarded
+TagLib: A frame of unsupported or unknown type 'CM1' has been discarded
+TagLib: A frame of unsupported or unknown type 'CM1' has been discarded
+TagLib: Could not open file /home/amxx//Music/Muse/Black Holes and Revelations/Assassin.mp3
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: A frame of unsupported or unknown type 'RTG' has been discarded
+TagLib: A frame of unsupported or unknown type 'RTG' has been discarded
+TagLib: A frame of unsupported or unknown type 'RTG' has been discarded
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+TagLib: MPEG::Header::parse() -- Invalid sample rate.
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/02 LoveGame 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/02 LoveGame 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/02 LoveGame.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/02 LoveGame.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/06 Poker Face 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/06 Poker Face 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/06 Poker Face.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/06 Poker Face.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/02 LoveGame 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/02 LoveGame 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/02 LoveGame.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/02 LoveGame.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/06 Poker Face 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/06 Poker Face 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame/06 Poker Face.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame/06 Poker Face.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance 1.m4a' as it's not a positive integer
+writeCommonTags: couldn't write 'track' tag to 'Lady Gaga/The Fame Monster/01 Bad Romance 1.m4a' as it's not a positive integer
+[2015/05/21 08:13:16] Constructed window is bigger than terminal size
+[2015/05/21 10:56:17] Constructed window is bigger than terminal size

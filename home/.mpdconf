@@ -1,0 +1,34 @@
+bind_to_address				"127.0.0.1"
+port									"6600"
+
+music_directory       "/home/amxx/Music"
+playlist_directory		"/home/amxx/.mpd/playlists"
+db_file								"/home/amxx/.mpd/tag_cache"
+log_file							"/home/amxx/.mpd/mpd.log"
+pid_file							"/home/amxx/.mpd/pid"
+state_file						"/home/amxx/.mpd/state"
+metadata_to_use				"artist,album,title,track,name,genre,date,composer,disc"
+
+#user									"amxx"
+
+audio_output {
+	type								"pulse"
+	name								"Archteryx"
+}
+audio_output {
+	type								"fifo"
+	name								"Fifo"
+	path								"/tmp/mpd.fifo"
+	format							"44100:16:2"
+}
+
+
+mixer_type						"software"
+filesystem_charset 		"UTF-8"
+id3v1_encoding				"UTF-8"
+
+
+# password 						"amxx1321@read,add,control,admin"
+# default_permissions	"read"
+
+

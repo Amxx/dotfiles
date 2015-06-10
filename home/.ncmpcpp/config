@@ -1,0 +1,160 @@
+display_bitrate													= "yes"
+
+##### connection settings #####
+mpd_host																= "localhost"
+mpd_port																= "6600"
+mpd_music_dir														= "/home/amxx/Music"
+mpd_connection_timeout									= "5"
+
+
+mpd_crossfade_time 											= "0"
+
+
+##### delays #####
+## delay after playlist highlighting will be disabled (0 = don't disable)
+playlist_disable_highlight_delay				= "0"
+## defines how long various messages are supposed to be visible
+#message_delay_time											= "4"
+
+
+##### song format #####
+##
+## for song format you can use:
+##
+## %l - length
+## %f - short filename
+## %F - full filename
+## %a - artist
+## %t - title
+## %b - album
+## %y - year
+## %n - track number
+## %g - genre
+## %c - composer
+## %p - performer
+## %d - disc
+## %C - comment
+## %r - begin right align
+##
+## you can also put them in { } and then it will be displayed
+## only if all requested values are available and/or define alternate
+## value with { }|{ } eg. {%a - %t}|{%f}
+##
+## text can also have different color than the main window has,
+## eg. if you want length to be green, write $3%l$9
+##
+## available values:
+##
+## - 0 - default window color
+## - 1 - black
+## - 2 - red
+## - 3 - green
+## - 4 - yellow
+## - 5 - blue
+## - 6 - magenta
+## - 7 - cyan
+## - 8 - white
+## - 9 - end of current color
+##
+## Note: colors can be nested.
+##
+
+song_list_format												= "{$3[%l]$9} {$7%a$9} {$3%b$9} {$7%t$9} {$3[%d - %N]$9}|{$3[%N]$9}|{}"
+song_library_format											= "{%n - }{%t}|{%f}"
+#media_library_album_format							= "{(%y) }%b"																								#0.6BETA
+#media_library_album_format							= "{(%y) }%b"																								#0.6BETA
+tag_editor_album_format									= "{(%y) }%b"
+browser_playlist_prefix									= "$4playlist$9 "
+selected_item_prefix										= "$8"
+selected_item_suffix										= "$9"
+
+## colors are not supported for below veriables
+#song_status_format											= "{(%l) }{%a - }{%t}|{%f}"
+#song_window_title_format								= "{%a - }{%t}|{%f}"
+
+
+##### columns settings #####
+##
+## syntax of song columns list format is "column column etc."
+##
+## - syntax for each column is:
+##
+## (width of column in %)[column's color]{displayed tag}
+##
+## - color is optional (if you want the default one, type [])
+##
+
+#song_columns_list_format								= "(7f)[green]{l}		(40)[yellow]{t}	(30)[yellow]{a} (25)[yellow]{b}"
+#song_columns_list_format								= "(6f)[green]{l}		(10)[cyan]{a}		(30)[green]{b}	(55)[cyan]{t}		(5f)[green]{d}		(7f)[green]{N}"
+song_columns_list_format								= "(6f)[green]{l}		(20)[cyan]{a}		(20)[green]{b}	(55)[cyan]{t}		(8f)[green]{d}		(8f)[green]{N}"
+
+
+##### various settings #####
+user_interface													= "alternative"
+playlist_display_mode										= "columns"
+browser_display_mode										= "columns"
+search_engine_display_mode							= "columns" (classic/columns)
+incremental_seeking											= "yes"
+#seek_time															= "1"
+autocenter_mode													= "yes"
+#repeat_one_mode												= "no"
+#default_place_to_search_in							= "database" (database/playlist)
+#media_library_left_column							= "a" (possible values: a,y,g,c,p, legend above)
+#default_find_mode											= "wrapped" (wrapped/normal)
+#default_space_mode											= "add" (add/select)
+#default_tag_editor_left_col						= "albums" (albums/dirs)
+#default_tag_editor_pattern							= "%n - %t"
+header_visibility												= "yes"
+statusbar_visibility										= "yes"
+# fancy_scrolling												= "yes"																											#0.6BETA
+follow_now_playing_lyrics								= "yes"
+#ncmpc_like_songs_adding								= "no" (enabled - add/remove, disabled - always add)
+# display_screens_numbers_on_start			= "yes"																											#0.6BETA 
+clock_display_seconds										= "yes"
+ignore_leading_the											= "no"
+#enable_window_title										= "yes"
+
+
+##### lyrics support #####
+##
+## supported lyrics databases:
+##
+## - 1 - lyricwiki.org
+## - 2 - lyricsplugin.com
+##
+
+# lyrics_database												= "1"																												#0.6BETA
+
+
+##### colors definitions #####
+colors_enabled													= "yes"
+empty_tag_color													= "white"
+header_window_color											= "green"
+volume_color														= "green"
+state_line_color												= "green"
+state_flags_color												= "green"
+main_window_color												= "green"
+color1																	= "green"
+color2																	= "green"
+main_window_highlight_color							= "green"
+progressbar_color												= "green"
+statusbar_color													= "green"
+active_column_color											= "white"
+window_border_color											= "green"
+active_window_border										= "white"
+
+
+
+
+visualizer_in_stereo										= "yes"
+visualizer_fifo_path										= "/tmp/mpd.fifo"
+visualizer_output_name									= "Fifo"
+visualizer_sync_interval								= "30" 
+
+visualizer_color												= "green"
+visualizer_look													= "◆▋"
+
+#visualizer_type												= "wave"
+visualizer_type													= "spectrum"
+
+
