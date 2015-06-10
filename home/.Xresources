@@ -1,0 +1,60 @@
+!URxvt.letterSpace: -2
+URxvt.font: xft:source code pro medium:size=8
+!URxvt.font: xft:monospace:size=8
+URxvt.scrollBar: false
+URxvt.geometry: 120x28
+URxvt.saveLines: 10000
+!!!URxvt.borderLess: true !not working
+
+URxvt.urlLauncher:    /usr/bin/firefox
+URxvt.matcher.button: 1 
+
+URxvt.perl-ext-common:  default,clipboard,tabbed
+URxvt.iso14755:         False
+URxvt.keysym.C-M-c:     perl:clipboard:copy
+URxvt.keysym.C-M-v:     perl:clipboard:paste
+
+!URxvt.keysym.C-t:       perl:tab-new
+!URxvt.keysym.C-Left:    perl:tab-previous
+!URxvt.keysym.C-Right:   perl:tab-next
+!URxvt.keysym.C-M-Left:  perl:tab-move-left
+!URxvt.keysym.C-M-Roght: perl:tab-move-right
+!URxvt.keysum.C-M-r:     perl:tab-rename
+
+
+
+URxvt.depth: 32
+URxvt.background: [80]#000000
+URxvt.foreground: #FFFFFF
+!URxvt.background: #262626
+!URxvt.foreground: #A8A8A8
+
+!(252)
+!URxvt.colorBD:    #D0D0D0
+!URxvt.colorIT:    #D0D0D0
+!URxvt.colorUL:    #D0D0D0
+!BLK
+Rxvt.color0:      #000000
+URxvt.color8:     #555555
+!RED
+URxvt.color1:     #FF5555
+URxvt.color9:     #AA0000
+!GRN
+URxvt.color2:     #00AA00
+URxvt.color10:    #55FF55
+!YEL
+URxvt.color3:     #AAAA00
+URxvt.color11:    #FFFF55
+!BLU
+URxvt.color4:     #0000AA
+URxvt.color12:    #5555FF
+!MAG
+URxvt.color5:     #AA00AA
+URxvt.color13:    #FF55FF
+!CYN
+URxvt.color6:     #00AAAA
+URxvt.color14:    #55FFFF
+!WHT (252, 231)
+URxvt.color7:     #AAAAAA
+URxvt.color15:    #FFFFFF
+
