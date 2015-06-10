@@ -1,2 +1,4 @@
-*.hi
 *.o
+
+home/.xmonad/*
+!home/.xmonad/xmonad.hs
