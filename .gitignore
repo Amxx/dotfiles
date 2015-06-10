@@ -1,4 +1,7 @@
 *.o
 
+home/.ssh/*
+!home/.ssh/config
+
 home/.xmonad/*
 !home/.xmonad/xmonad.hs
