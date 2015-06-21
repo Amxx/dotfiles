@@ -1,0 +1,1 @@
+/home/amxx/Code/cloned_repo/oh-my-zsh/templates/zshrc.zsh-template
