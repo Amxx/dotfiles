@@ -69,35 +69,15 @@ fi
 ### Configuration du prompt
 setopt promptsubst
 
-#MainC='%B%F{blue}'
-#UserC='%B%(#~%F{red}~%F{green})'
-#TermC='%B%F{cyan}'
-#PathC='%B%F{yellow}'
-#TimeC='%F{cyan}'
-#CodeC='%B%F{cyan}'
+MainC='%B%F{blue}'
+UserC='%B%(#~%F{red}~%F{green})'
+TermC='%B%F{cyan}'
+PathC='%B%F{yellow}'
+TimeC='%F{cyan}'
+CodeC='%B%F{cyan}'
 
-#PS1='%{$MainC%}[$UserC%n@%m%{$MainC%}:$TermC%y%{$MainC%}:$PathC%28<…<%~%<<%{$MainC%}]%#%f%{$reset_color%} '
-#RPS1='$TimeC%D{%e.%B.%Y %H.%M}$CodeC [$?]%f%{$reset_color%}'
-
-
-
-function powerline_precmd() {
-  export PS1="$(powerline-shell.py $? --shell zsh 2> /dev/null)"
-}
-
-function install_powerline_precmd()
-{
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-install_powerline_precmd
-
-
+PS1='%{$MainC%}[$UserC%n@%m%{$MainC%}:$TermC%y%{$MainC%}:$PathC%28<…<%~%<<%{$MainC%}]%#%f%{$reset_color%} '
+RPS1='$TimeC%D{%e.%B.%Y %H.%M}$CodeC [$?]%f%{$reset_color%}'
 
 
 
@@ -144,10 +124,29 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 
 
-
 # FOCUS TO LAST OPENNED TERMINAL
 [[ -n "$DISPLAY" ]] && xset -b
 [[ -z "$DISPLAY" ]] && setterm -blength 0
 #[[ -n "$DISPLAY" ]] && wmctrl -i -a $(wmctrl -l | grep Terminal | tail -n 1 | cut -d ' ' -f1)
 
 
+###############################################################################
+#                                  POWERLINE                                  #
+###############################################################################
+
+function powerline_precmd() {
+  export PS1="$(powerline-shell.py $? --shell zsh 2> /dev/null)"
+  export RPS1=""
+}
+
+function install_powerline_precmd()
+{
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+[[ -n "$DISPLAY" ]] && install_powerline_precmd
