@@ -17,7 +17,7 @@ PATH="/usr/local/bin/:$PATH"
 # SCRIPTS
 PATH="/home/amxx/Code/Scripts/:$PATH"
 # SIMGRID - M1-AlgoPar
-PATH="/home/amxx/Work/Teaching/M1-AlgoPar/env/SimGrid-3.11-build/install/bin:$PATH"
+PATH="/home/amxx/Work/Teaching/M1-AlgoPar/env/SimGrid-3.11-install/bin:$PATH"
 ################################################################################
 
 
