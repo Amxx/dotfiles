@@ -12,8 +12,14 @@ set -o shwordsplit
 ### Configuration des chemins
 PATH="/usr/local/bin/:$PATH"
 
+
+################################################################################
 # SCRIPTS
 PATH="/home/amxx/Code/Scripts/:$PATH"
+# SIMGRID - M1-AlgoPar
+PATH="/home/amxx/Work/Teaching/M1-AlgoPar/env/SimGrid-3.11-build/install/bin:$PATH"
+################################################################################
+
 
 # Go through paths
 WORDCHARS=${WORDCHARS/\/}
@@ -139,7 +145,7 @@ function powerline_precmd() {
   export RPS1=""
 }
 
-function install_powerline_precmd()
+function enable_powerline()
 {
   for s in "${precmd_functions[@]}"; do
     if [ "$s" = "powerline_precmd" ]; then
@@ -149,4 +155,4 @@ function install_powerline_precmd()
   precmd_functions+=(powerline_precmd)
 }
 
-[[ -n "$DISPLAY" ]] && install_powerline_precmd
+[[ -n "$DISPLAY" ]] && enable_powerline
