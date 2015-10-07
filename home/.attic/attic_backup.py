@@ -17,16 +17,17 @@ def message(text):
 
 class Archive:
 	def __init__(self,cfg):
-		config = configparser.ConfigParser()
+		config = configparser.RawConfigParser()
 		config.read(cfg)
 		self.cfg     = cfg
 		self.name    = config['MAIN']['name']
 		self.archive = config['MAIN']['archive']
 		self.prefix  = re.sub('\$\(hostname\)', socket.gethostname(), config['MAIN']['prefix'])
-		self.files   = config['FILES']
-		self.exclude = config['EXCLUDE']
-		self.remote  = config['REMOTE']
-		self.prune   = config['PRUNE']
+		self.files   = config['FILES'  ] if config.has_section('FILES'  ) else []
+		self.exclude = config['EXCLUDE'] if config.has_section('EXCLUDE') else []
+		self.local   = config['LOCAL'  ] if config.has_section('LOCAL'  ) else []
+		self.remote  = config['REMOTE' ] if config.has_section('REMOTE' ) else []
+		self.prune   = config['PRUNE'  ] if config.has_section('PRUNE'  ) else None
 
 	def list(self):
 		message('%s - %s' % (self.name, 'List checkpoint'))
@@ -41,16 +42,19 @@ class Archive:
 		for dest in self.exclude: cmd += ' --exclude %s' % self.exclude[dest]
 		os.system(cmd)
 		# Prune
-		os.system('attic prune %s %s' % (self.archive, self.prune['settings']))
+		if (self.prune):
+			os.system('attic prune %s %s' % (self.archive, self.prune['settings']))
 
 	def push(self):
 		message('%s - %s' % (self.name, 'Pushing to remote'))
 		# Push
-		for dest in self.remote:
-			if os.path.exists(self.remote[dest]):
-				os.system('rsync -avz --delete %s %s' % (self.archive, self.remote[dest]))
+		for dest in self.local:
+			if os.path.exists(self.local[dest]):
+				os.system('rsync -avz --delete %s %s' % (self.archive, self.local[dest]))
 			else:
-				print('[WARNING] Could not push to `%s`, path doesn\'t exist' % self.remote[dest])
+				print('[WARNING] Could not push to `%s`, path doesn\'t exist' % self.local[dest])
+		for dest in self.remote:
+			os.system('rsync -avz --delete %s %s' % (self.archive, self.remote[dest]))
 
 # ==============================================================================
 
