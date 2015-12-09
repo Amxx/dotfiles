@@ -13,13 +13,18 @@ set -o shwordsplit
 PATH="/usr/local/bin/:$PATH"
 
 
-################################################################################
-# SCRIPTS
+###############################################################################
+## SCRIPTS
 PATH="/home/amxx/Code/Scripts/:$PATH"
-# SIMGRID - M1-AlgoPar
-PATH="/home/amxx/Work/Teaching/M1-AlgoPar/env/SimGrid-3.11-install/bin:$PATH"
-################################################################################
-
+## SIMGRID - M1-AlgoPar
+PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/bin:$PATH"
+LD_LIBRARY_PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/lib:$LD_LIBRARY_PATH"
+## Natron - Thesis
+PATH="/home/amxx/Work/These/Runtimes/Natron:$PATH"
+###############################################################################
+export PATH
+export LD_LIBRARY_PATH
+###############################################################################
 
 # Go through paths
 WORDCHARS=${WORDCHARS/\/}
@@ -33,7 +38,7 @@ setopt HIST_IGNORE_DUPS
 ### Configuration des alias
 alias ls='ls --color=auto'
 alias ll='ls -lhF'
-alias la='ls -ahF'
+alias la='ls -lhFa'
 alias grep='grep --color=auto'
 alias yu='yaourt -Syua'
 alias subl='subl3'
@@ -41,6 +46,7 @@ alias subl='subl3'
 alias mplayer='mpv --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
 alias mplayer_50='mplayer --autofit=50%'
 alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
+#alias ='echo $?'
 
 
 
