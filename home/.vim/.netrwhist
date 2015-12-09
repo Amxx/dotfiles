@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/amxx/Code/Projects/tess++/.git'
-let g:netrw_dirhist_2='/home/amxx/Code/Scripts'
-let g:netrw_dirhist_3='/home/amxx/Code/Projects/khronos/src/apps/exemple-timer'
-let g:netrw_dirhist_4='/var/lib/nginx'
-let g:netrw_dirhist_5='/home/amxx/Code/Projects/akde/.git'
-let g:netrw_dirhist_6='/home/amxx/Code/Projects/distwave/src'
-let g:netrw_dirhist_7='/home/amxx/.homesick/repos/dotfiles/home/.attic/configs'
-let g:netrw_dirhist_8='/home/amxx/.local/share/gnome-shell/extensions/transmission-daemon@patapon.info'
-let g:netrw_dirhist_9='/home/amxx/.local/share/gnome-shell/extensions/battery_status@milliburn.github.com'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/amxx/Work/Teaching/M1-AlgoPar/PDF/Fiches/Annexes'

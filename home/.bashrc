@@ -41,3 +41,6 @@ alias gpucheck='cat /proc/acpi/bbswitch'
 export LD_LIBRARY_PATH=/home/amxx/Work/M2_Stage/sync/code/install/lib:$LD_LIBRARY_PATH
 
 export PATH=/home/amxx/Work/These/Runtimes/Natron:$PATH
+
+export PATH=/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/bin:$PATH
+export LD_LIBRARY_PATH=/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/lib:$LD_LIBRARY_PATH
