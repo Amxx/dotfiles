@@ -82,7 +82,7 @@ class Archives:
 		print('│ %-80s │' % 'Archives List')
 		print('├──────────────────────────────────────────────────────────────────────────────────┤')
 		for name in self.map:
-			print('│ [%-7s] %-70s │' % (name, self.map[name].cfg))
+			print('│ [%-10s] %-67s │' % (name, self.map[name].cfg))
 		print('└──────────────────────────────────────────────────────────────────────────────────┘')
 
 	def all(self):
