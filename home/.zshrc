@@ -20,7 +20,7 @@ PATH="/home/amxx/Code/Scripts/:$PATH"
 PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/bin:$PATH"
 LD_LIBRARY_PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/lib:$LD_LIBRARY_PATH"
 ## Natron - Thesis
-PATH="/home/amxx/Work/These/Runtimes/Natron:$PATH"
+PATH="/home/amxx/Work/These/old/Runtimes/Natron:$PATH"
 ###############################################################################
 export PATH
 export LD_LIBRARY_PATH
@@ -44,9 +44,9 @@ alias yu='yaourt -Syua'
 alias subl='subl3'
 #alias mplayer='mpv --hwdec=vaapi --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
 alias mplayer='mpv --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
-alias mplayer_50='mplayer --autofit=50%'
-alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
-#alias ='echo $?'
+#alias mplayer_50='mplayer --autofit=50%'
+#alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
+alias result='echo $?'
 
 
 
