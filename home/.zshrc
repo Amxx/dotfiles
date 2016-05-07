@@ -48,6 +48,8 @@ alias mplayer='mpv --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb 
 #alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
 alias result='echo $?'
 
+alias shred='shred --iterations=16 --zero --remove --verbose'
+
 
 
 ### Variables globales
