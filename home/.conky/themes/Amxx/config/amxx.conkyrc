@@ -67,7 +67,7 @@ ${voffset -10}${font caviar dreams:size=6}${alignr}ACPI: ${acpitemp}.0°C
 ${font caviar dreams:size=6}${alignr}CPU: ${exec sensors | grep 'Physical id 0' | cut -c18-21}°C
 
 ## Showing CPU Graph
-${voffset -10}${offset 130}${font caviar dreams:size=10:bold}${color5}Processeur
+${voffset -15}${offset 130}${font caviar dreams:size=10:bold}${color5}Processeur
 ${offset 200}${font caviar dreams:size=9}${color4}${top name 1}${alignr}${top cpu 1}%
 ${offset 200}${font caviar dreams:size=9}${color1}${top name 2}${alignr}${top cpu 2}%
 ${offset 200}${font caviar dreams:size=9}${color2}${top name 3}${alignr}${top cpu 3}%
