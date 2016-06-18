@@ -58,11 +58,12 @@ class Archive:
 
 # ==============================================================================
 
+import glob
 class Archives:
 	def __init__(self, cfgdir):
 		self.map = dict();
-		for cfg in os.listdir(cfgdir):
-			archive = Archive(cfgdir+"/"+cfg)
+		for cfg in glob.glob(cfgdir+"*.cfg"):
+			archive = Archive(cfg)
 			self.map[archive.name] = archive
 
 	def list(self, names):
@@ -86,14 +87,11 @@ class Archives:
 		print('└──────────────────────────────────────────────────────────────────────────────────┘')
 
 	def all(self):
-	 return [key for key in self.map]
+		return [key for key in self.map]
 
 # ==============================================================================
 
 if __name__ == '__main__':
-
-	# Load configs
-	configs = Archives("/home/amxx/.attic/configs")
 
 	# Parse argument
 	parser = argparse.ArgumentParser()
@@ -105,6 +103,9 @@ if __name__ == '__main__':
 	group.add_argument ('-b',    action='store_true')
 	parser.add_argument('--all', action='store_true')
 	args = parser.parse_args()
+
+	# Load configs
+	configs = Archives("/home/amxx/.attic/configs/")
 
 	# Fill archive list
 	if args.all:
@@ -118,10 +119,9 @@ if __name__ == '__main__':
 			args.list = re.split(' ', value)
 
 	# Sanity check
-	for name in args.list:
-		if name not in configs.all():
-			print('[WARNING] unknwon archive: %s' % name)
-	args.list = [name for name in args.list if name in configs.all()]
+	for name in set(args.list) - set(configs.all()):
+		print('[WARNING] unknwon archive: %s' % name)
+	args.list = set(args.list) & set(configs.all())
 
 	# Run
 	if args.l:           configs.list  (args.list)
