@@ -1,4 +1,6 @@
-### Modules
+###############################################################################
+#                                   MODULES                                   #
+###############################################################################
 autoload -Uz compinit promptinit colors
 compinit
 promptinit
@@ -6,21 +8,26 @@ colors
 
 set -o shwordsplit
 
-
-
-
 ### Configuration des chemins
 PATH="/usr/local/bin/:$PATH"
-
+LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 ###############################################################################
-## SCRIPTS
+#                                   SCRIPTS                                   #
+###############################################################################
 PATH="/home/amxx/Code/Scripts/:$PATH"
-## SIMGRID - M1-AlgoPar
-PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/bin:$PATH"
-LD_LIBRARY_PATH="/home/amxx/Work/Teaching/M1-AlgoPar/Runtime/SimGrid-3.11-install/lib:$LD_LIBRARY_PATH"
-## Natron - Thesis
+
+###############################################################################
+#                                   THESIS                                    #
+###############################################################################
+# Natron
 PATH="/home/amxx/Work/These/old/Runtimes/Natron:$PATH"
+# SIMGRID
+PATH="/home/amxx/Work/Thesis/Runtimes/SimGrid/SimGrid-3.13-install/bin:$PATH"
+LD_LIBRARY_PATH="/home/amxx/Work/Thesis/Runtimes/SimGrid/SimGrid-3.13-install/lib:$LD_LIBRARY_PATH"
+# Vite
+PATH="/home/amxx/Work/Thesis/Runtimes/Vite/install/bin:$PATH"
+
 ###############################################################################
 export PATH
 export LD_LIBRARY_PATH
@@ -35,7 +42,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt HIST_IGNORE_DUPS
 
-### Configuration des alias
+###############################################################################
+#                                    ALIAS                                    #
+###############################################################################
 alias ls='ls --color=auto'
 alias ll='ls -lhF'
 alias la='ls -lhFa'
@@ -46,13 +55,15 @@ alias subl='subl3'
 alias mplayer='mpv --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
 #alias mplayer_50='mplayer --autofit=50%'
 #alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
+
 alias result='echo $?'
+alias shred='shred --iterations=16 --zero --verbose' #--remove
+alias ipv6='ifconfig | grep global | sed "s/ *//" | cut -d" " -f2'
 
-alias shred='shred --iterations=16 --zero --remove --verbose'
 
-
-
-### Variables globales
+###############################################################################
+#                              GLOBAL VARIABLES                               #
+###############################################################################
 export EDITOR="vim"
 export PAGER="less"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -95,7 +106,7 @@ RPS1='$TimeC%D{%e.%B.%Y %H.%M}$CodeC [$?]%f%{$reset_color%}'
 
 
 
-### Configuration des touches 
+### Configuration des touches
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
