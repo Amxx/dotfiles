@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/amxx/Work/Teaching/M1-AlgoPar/PDF/Fiches/Annexes'
 let g:netrw_dirhist_2='/home/amxx/.local/share/gnome-shell/extensions/shellshape@gfxmonk.net'
 let g:netrw_dirhist_3='/home/amxx/.local/share/gnome-shell/extensions/battery_status@milliburn.github.com'
 let g:netrw_dirhist_4='/home/amxx/Work/Teaching/2015-M1-SystDist/Code/sandbox/fork'
 let g:netrw_dirhist_5='/home/amxx/Work/Thesis/.git'
 let g:netrw_dirhist_6='/var/log/cups'
+let g:netrw_dirhist_7='/home/amxx/.homesick/repos/dotfiles/home/.attic/configs'
+let g:netrw_dirhist_8='/home/amxx/.homesick/repos/dotfiles/.git'

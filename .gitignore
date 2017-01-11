@@ -1,6 +1,7 @@
 *.o
 
 home/.attic/keys
+home/.borg/keys
 
 home/.ncmpcpp/*
 !/home/ncmpcpp/config

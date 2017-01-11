@@ -19,35 +19,38 @@ class Archive:
 	def __init__(self,cfg):
 		config = configparser.RawConfigParser()
 		config.read(cfg)
-		self.cfg      = cfg
-		self.name     = config.get('MAIN', 'name',    fallback=None)
-		self.archive  = config.get('MAIN', 'archive', fallback=None)
-		self.readonly = config.getboolean('MAIN', 'readonly', fallback=False)
-		self.prefix   = re.sub('\$\(hostname\)', socket.gethostname(), config.get('MAIN', 'prefix', fallback=socket.gethostname()+'-UNAMED'))
-		self.files    = config.items('FILES')
-		self.exclude  = config.items('EXCLUDE')
-		self.local    = config.items('LOCAL')
-		self.remote   = config.items('REMOTE')
-		self.prune    = config.get('PRUNE', 'settings', fallback=None)
+		self.cfg         = cfg
+		self.name        = config.get('MAIN', 'name',        fallback=None)
+		self.archive     = config.get('MAIN', 'archive',     fallback=None)
+		self.compression = config.get('MAIN', 'compression', fallback='zlib')
+		self.readonly    = config.getboolean('MAIN', 'readonly', fallback=False)
+		self.prefix      = re.sub('\$\(hostname\)', socket.gethostname(), config.get('MAIN', 'prefix', fallback=socket.gethostname()+'-UNAMED'))
+		self.files       = config.items('FILES')
+		self.exclude     = config.items('EXCLUDE')
+		self.local       = config.items('LOCAL')
+		self.remote      = config.items('REMOTE')
+		self.prune       = config.get('PRUNE', 'settings', fallback=None)
 
 	def list(self):
 		message('%s - %s' % (self.name, 'List checkpoint'))
 		# List
-		os.system('attic list %s' % self.archive)
+		os.system('borg list %s' % self.archive)
 
 	def commit(self):
-		#Check for readonly
-		if self.readonly: return
-		# Message
 		message('%s - %s' % (self.name, 'Creating checkpoint'))
+		#Check for readonly
+		if self.readonly:
+			print('[Notice] %s is configured as readonly, no checkpoint created' % self.name)
+			return
 		# Create
-		cmd = 'attic create -s %s::%s-%s' % (self.archive, self.prefix, datetime.datetime.now().strftime("%Y%m%d_%H%M"))
+		cmd = 'borg create --verbose --compress %s --progress --stats  %s::%s-%s' % (self.compression, self.archive, self.prefix, datetime.datetime.now().strftime("%Y%m%d%H%M"))
 		for (option, path) in self.files:   cmd += ' %s'           % path
 		for (option, path) in self.exclude: cmd += ' --exclude %s' % path
 		os.system(cmd)
 		# Prune
 		if (self.prune):
-			os.system('attic prune %s %s' % (self.archive, self.prune))
+			cmd = 'borg prune %s %s' % (self.archive, self.prune)
+			os.system(cmd)
 
 	def push(self):
 		message('%s - %s' % (self.name, 'Pushing to remote'))
@@ -56,7 +59,7 @@ class Archive:
 			if os.path.exists(path):
 				os.system('rsync -avz --delete %s %s' % (self.archive, path))
 			else:
-				print('[WARNING] Could not push to `%s`, path doesn\'t exist' % path)
+				print('[Warning] Could not push to `%s`, path doesn\'t exist' % path)
 		for (option, path) in self.remote:
 			os.system('rsync -avz --delete %s %s' % (self.archive, path))
 
@@ -101,15 +104,15 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('list', nargs='*')
 	group = parser.add_mutually_exclusive_group(required=True)
-	group.add_argument ('-l',    action='store_true')
-	group.add_argument ('-c',    action='store_true')
-	group.add_argument ('-p',    action='store_true')
-	group.add_argument ('-b',    action='store_true')
-	parser.add_argument('--all', action='store_true')
+	group.add_argument ('-l',    action='store_true', help='list checkpoints'        )
+	group.add_argument ('-c',    action='store_true', help='create new checkpoint'   )
+	group.add_argument ('-p',    action='store_true', help='push to all destinations')
+	group.add_argument ('-b',    action='store_true', help='backup (create and push' )
+	parser.add_argument('--all', action='store_true', help='select all archives'     )
 	args = parser.parse_args()
 
 	# Load configs
-	configs = Archives("/home/amxx/.attic/configs/")
+	configs = Archives("/home/amxx/.borg/configs/")
 
 	# Fill archive list
 	if args.all:
