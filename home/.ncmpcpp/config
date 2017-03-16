@@ -1,21 +1,18 @@
 display_bitrate													= "yes"
 
 ##### connection settings #####
-mpd_host																= "localhost"
+mpd_host																= "amxx1321@localhost"
 mpd_port																= "6600"
 mpd_music_dir														= "/home/amxx/Music"
 mpd_connection_timeout									= "5"
 
-
 mpd_crossfade_time 											= "0"
-
 
 ##### delays #####
 ## delay after playlist highlighting will be disabled (0 = don't disable)
 playlist_disable_highlight_delay				= "0"
 ## defines how long various messages are supposed to be visible
 #message_delay_time											= "4"
-
 
 ##### song format #####
 ##
@@ -88,7 +85,6 @@ selected_item_suffix										= "$9"
 #song_columns_list_format								= "(6f)[green]{l}		(10)[cyan]{a}		(30)[green]{b}	(55)[cyan]{t}		(5f)[green]{d}		(7f)[green]{N}"
 song_columns_list_format								= "(6f)[green]{l}		(20)[cyan]{a}		(20)[green]{b}	(55)[cyan]{t}		(8f)[green]{d}		(8f)[green]{N}"
 
-
 ##### various settings #####
 user_interface													= "alternative"
 playlist_display_mode										= "columns"
@@ -114,7 +110,6 @@ clock_display_seconds										= "yes"
 ignore_leading_the											= "no"
 #enable_window_title										= "yes"
 
-
 ##### lyrics support #####
 ##
 ## supported lyrics databases:
@@ -124,7 +119,6 @@ ignore_leading_the											= "no"
 ##
 
 # lyrics_database												= "1"																												#0.6BETA
-
 
 ##### colors definitions #####
 colors_enabled													= "yes"
@@ -143,18 +137,13 @@ active_column_color											= "white"
 window_border_color											= "green"
 active_window_border										= "white"
 
-
-
-
 visualizer_in_stereo										= "yes"
 visualizer_fifo_path										= "/tmp/mpd.fifo"
 visualizer_output_name									= "Fifo"
-visualizer_sync_interval								= "30" 
+visualizer_sync_interval								= "30"
 
 visualizer_color												= "green"
 visualizer_look													= "◆▋"
 
 #visualizer_type												= "wave"
 visualizer_type													= "spectrum"
-
-
