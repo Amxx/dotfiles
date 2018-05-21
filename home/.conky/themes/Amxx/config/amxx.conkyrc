@@ -75,7 +75,7 @@ ${offset 200}${font caviar dreams:size=9}${color3}${top name 4}${alignr}${top cp
 ${offset 200}${font caviar dreams:size=9}${color3}${top name 5}${alignr}${top cpu 5}%
 
 ## Showing memory part with TOP 5
-${voffset 60}${offset 130}${font caviar dreams:size=10:bold}${color5}Memoire
+${voffset 45}${offset 130}${font caviar dreams:size=10:bold}${color5}Memoire
 ${offset 200}${font caviar dreams:size=9}${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
 ${offset 200}${font caviar dreams:size=9}${color1}${top_mem name 2}${alignr}${top_mem mem 2}%
 ${offset 200}${font caviar dreams:size=9}${color2}${top_mem name 3}${alignr}${top_mem mem 3}%
@@ -83,7 +83,7 @@ ${offset 200}${font caviar dreams:size=9}${color3}${top_mem name 4}${alignr}${to
 ${offset 200}${font caviar dreams:size=9}${color3}${top_mem name 4}${alignr}${top_mem mem 5}%
 
 ## Showing disk partitions: root, home and Data
-${voffset 50}${offset 130}${font caviar dreams:size=10:bold}${color5}Disques
+${voffset 45}${offset 130}${font caviar dreams:size=10:bold}${color5}Disques
 ${voffset 3}${offset 200}${font caviar dreams:size=8:bold}${color1}Free: ${font caviar dreams:size=8}${fs_free /}${alignr}${font caviar dreams:size=8:bold}Used: ${font caviar dreams:size=8}${fs_used /}
 ${voffset 0}${offset 200}${font caviar dreams:size=8:bold}${color1}Free: ${font caviar dreams:size=8}${fs_free /boot}${alignr}${font caviar dreams:size=8:bold}Used: ${font caviar dreams:size=8}${fs_used /boot}
 ${voffset 0}${offset 200}${font caviar dreams:size=8:bold}${color1}Free: ${font caviar dreams:size=8}${fs_free /home}${alignr}${font caviar dreams:size=8:bold}Used: ${font caviar dreams:size=8}${fs_used /home}
@@ -95,7 +95,7 @@ ${offset 200}${upspeedgraph enp0s20u3 30,300 4B1B0C FF5C2B 0}
 ${offset 200}${color1}${font caviar dreams:size=9:bold}Down: ${alignr}${font caviar dreams:size=9}$color2${downspeed enp0s20u3}
 ${offset 200}${downspeedgraph enp0s20u3 30,300 324D23 77B753 0}
 
-${voffset 20}${offset 130}${font caviar dreams:size=10:bold}${color5}WiFi
+${voffset 10}${offset 130}${font caviar dreams:size=10:bold}${color5}WiFi
 ${offset 200}${color1}${font caviar dreams:size=9:bold}Up: ${alignr}${font caviar dreams:size=9}$color2${upspeed wlp6s0}
 ${offset 200}${upspeedgraph wlp6s0 30,300 4B1B0C FF5C2B 0}
 ${offset 200}${color1}${font caviar dreams:size=9:bold}Down: ${alignr}${font caviar dreams:size=9}$color2${downspeed wlp6s0}

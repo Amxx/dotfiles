@@ -2,7 +2,7 @@
 	ui = auto
 [user]
 	name = Hadrien Croubois
-	email = hadrien.croubois@gmail.com
+	email = hadrien.croubois@ens-lyon.fr
 [core]
 	editor = vim
 [push]
@@ -12,3 +12,4 @@
 	wdiff = diff --color-words
 	last = log -1 HEAD
 	st = status --porcelain
+	tree = log --all --graph --decorate --oneline
