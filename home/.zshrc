@@ -16,18 +16,27 @@ LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 #                                   SCRIPTS                                   #
 ###############################################################################
 PATH="/home/amxx/Code/Scripts/:$PATH"
-
+PATH="/home/amxx/Code/cloned_repo/hashdeep/install/usr/local/bin:$PATH"
 ###############################################################################
 #                                   THESIS                                    #
 ###############################################################################
-# Natron
+# --------------------------------- Natron ---------------------------------- #
 PATH="/home/amxx/Work/These/old/Runtimes/Natron:$PATH"
-# SIMGRID
+# --------------------------------- SIMGRID --------------------------------- #
 PATH="/home/amxx/Work/Thesis/Runtimes/SimGrid/SimGrid-3.13-install/bin:$PATH"
 LD_LIBRARY_PATH="/home/amxx/Work/Thesis/Runtimes/SimGrid/SimGrid-3.13-install/lib:$LD_LIBRARY_PATH"
-# Vite
+# ---------------------------------- Vite ----------------------------------- #
 PATH="/home/amxx/Work/Thesis/Runtimes/Vite/install/bin:$PATH"
-
+# ---------------------------------- DIET ----------------------------------- #
+export DIET="/home/amxx/Work/Thesis/Code/diet/install"
+# ---------------------------------- Omni ----------------------------------- #
+#PATH="/home/amxx/Work/Thesis/Code/DIET/omniORB-4.2.1/install/bin:$PATH"
+#LD_LIBRARY_PATH="/home/amxx/Work/Thesis/Code/DIET/omniORB-4.2.1/install/lib:$LD_LIBRARY_PATH"
+export OMNIORB_CONFIG=/etc/omniORB4.cfg
+# --------------------------------- XQilla ---------------------------------- #
+LD_LIBRARY_PATH="/home/amxx/Work/Thesis/Runtimes/XQilla-2.3.3/install/lib:$LD_LIBRARY_PATH"
+# DIET
+LD_LIBRARY_PATH="/home/amxx/Work/Thesis/Code/diet/install/lib:$LD_LIBRARY_PATH"
 ###############################################################################
 export PATH
 export LD_LIBRARY_PATH
@@ -46,25 +55,24 @@ setopt HIST_IGNORE_DUPS
 #                                    ALIAS                                    #
 ###############################################################################
 alias ls='ls --color=auto'
-alias ll='ls -lhF'
-alias la='ls -lhFa'
+alias ll='ls -lhFN'
+alias la='ls -lhFNa'
 alias grep='grep --color=auto'
 alias yu='yaourt -Syua'
-alias subl='subl3'
-#alias mplayer='mpv --hwdec=vaapi --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
 alias mplayer='mpv --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
+#alias mplayer='mpv --hwdec=vaapi --vo=opengl:lscale=spline36:dither-depth=auto:fbo-format=rgb --no-border'
 #alias mplayer_50='mplayer --autofit=50%'
 #alias mplayer_hdmi='mplayer --ao="alsa:device=[hw:1,3]"'
-
 alias result='echo $?'
 alias shred='shred --iterations=16 --zero --verbose' #--remove
 alias ipv6='ifconfig | grep global | sed "s/ *//" | cut -d" " -f2'
-
+alias tmux-open='tmux attach || tmux'
 
 ###############################################################################
 #                              GLOBAL VARIABLES                               #
 ###############################################################################
 export EDITOR="vim"
+export VISUAL="vim"
 export PAGER="less"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -148,13 +156,6 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
-
-# FOCUS TO LAST OPENNED TERMINAL
-[[ -n "$DISPLAY" ]] && xset -b
-[[ -z "$DISPLAY" ]] && setterm -blength 0
-#[[ -n "$DISPLAY" ]] && wmctrl -i -a $(wmctrl -l | grep Terminal | tail -n 1 | cut -d ' ' -f1)
-
-
 ###############################################################################
 #                                  POWERLINE                                  #
 ###############################################################################
@@ -163,7 +164,6 @@ function powerline_precmd() {
   export PS1="$(powerline-shell.py $? --shell zsh 2> /dev/null)"
   export RPS1=""
 }
-
 function enable_powerline()
 {
   for s in "${precmd_functions[@]}"; do
@@ -173,5 +173,8 @@ function enable_powerline()
   done
   precmd_functions+=(powerline_precmd)
 }
-
 [[ -n "$DISPLAY" ]] && enable_powerline
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
