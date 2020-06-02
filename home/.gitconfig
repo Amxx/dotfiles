@@ -2,11 +2,12 @@
 	ui = auto
 [user]
 	name = Hadrien Croubois
-	email = hadrien.croubois@ens-lyon.fr
+	email = hc@iex.ec
 [core]
 	editor = vim
 [push]
 	default = simple
+	followTags = true
 [alias]
 	ll = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
 	wdiff = diff --color-words
